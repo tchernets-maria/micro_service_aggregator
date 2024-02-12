@@ -1,0 +1,30 @@
+version: "3"
+services:
+  client-api:
+    container_name: amazing_herschel
+    build:
+      context: ./
+      dockerfile: ./client_api_route/docker/Dockerfile
+    ports:
+      - 8080:8080
+  identity:
+    container_name: eloquent_villani
+    build:
+      context: ./
+      dockerfile: ./identity/docker/Dockerfile
+    ports:
+      - 8083:8083
+  station:
+    container_name: sleepy_wozniak
+    build:
+      context: ./
+      dockerfile: ./station/docker/Dockerfile
+    ports:
+      - 8082:8082
+  transport:
+    container_name: infallible_liskov
+    build:
+      context: ./
+      dockerfile: ./transport/docker/Dockerfile
+    ports:
+      - 8081:8081
